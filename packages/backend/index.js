@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
+import healthRoutes from './routes/health.routes.js';
 
 const app = express();
 app.use(express.json());
