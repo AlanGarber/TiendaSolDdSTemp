@@ -46,20 +46,7 @@ npm install
 
 Esto instalará todas las dependencias para la raíz y para los paquetes `frontend` y `backend`.
 
-### 2\. Configuración de Variables de Entorno
-
-Crea un archivo `.env` en el directorio `packages/backend`. Puedes usar el archivo `.env.example` como plantilla.
-
-```
-# packages/backend/.env
-ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
-SERVER_PORT=3001
-```
-
-- **`ALLOWED_ORIGINS`**: Define los orígenes permitidos para las solicitudes CORS. Asegurate de incluir la URL donde se ejecuta tu frontend (por defecto, `http://localhost:3000` para Create React App). Cuando se haga el despliegue en nube acá se deberá incluir la URL donde se desplegó el frontend.
-- **`SERVER_PORT`**: El puerto en el que se ejecutará el servidor backend (ej. `8000`).
-
-### 3\. Ejecución de la Aplicación
+### 2\. Ejecución de la Aplicación
 
 Podés iniciar el frontend y el backend por separado o ambos a la vez:
 
@@ -88,3 +75,28 @@ Para iniciar el backend en modo `dev` y el frontend simultáneamente, usá:
 ```bash
 npm run start:dev
 ```
+
+# Gestion de ramas
+
+## Ramas principales
+
+| Rama   | Propósito                                              | Normas                                                                 |
+|--------|--------------------------------------------------------|------------------------------------------------------------------------|
+| `main` | Contiene la versión estable en producción              | No hacer push directo. Merge solo desde Pull Requests aprobados.    |
+| `develop` | Rama de desarrollo  | Se mergean las features completadas y testeadas.                      |
+
+---
+
+## Ramas soporte
+
+| Rama                | Propósito                                               | Ejemplo                       |
+|---------------------|--------------------------------------------------------|-------------------------------|
+| `feature/<nombre>`  | Desarrollo de nuevas funcionalidades                   | `feature/notificaciones`      |
+---
+
+## Convencion de commits
+
+- **Features:** `feature/<funcionalidad>` → ej: `feature/health-check`
+- **Release:** `release/<entrega>` → ej: `release/1`
+
+**Mantener los nombres cortos y claros**
